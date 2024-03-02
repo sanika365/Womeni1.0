@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Raleway', sans-serif;
+}
+body{
+  overflow-x: hidden;
+}
+@layer base {
+  body {
+    @apply  tracking-wide
+     /* bg-[#000000] text-[#ecf0f3] */
+    /* bg-[#ecf0f3] text-[#1f2937] */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway]
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl
+  }
+  
+  p{
+    @apply tracking-normal
+  }
+  li {
+    @apply cursor-pointer hover:border-b-pink-500  active:text-green-300 hover:text-pink-500 ease-in duration-300
+   }
+
+  button {
+    @apply shadow-md shadow-gray-400 rounded-xl uppercase 
+  }
+}
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import 'swiper/css/navigation';
+

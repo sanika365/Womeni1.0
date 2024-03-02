@@ -1,0 +1,76 @@
+ <div className='logo mx-5'>
+        <Link href={"/"}>
+          <Image src={""} width={200} height={20} alt='' />
+        </Link>
+      </div>
+      <div className='nav'>
+        <ul className='flex items-center space-x-2 md:space-x-8 font-bold md:font-normal md:text-md'>
+          <Link href={"/New_In"}>
+            <li>New_In</li>
+          </Link>
+          <Link href={"/Tops"}>
+            <li>Tops</li>
+          </Link>
+          <Link href={"/Dresses"}>
+            <li>Dresses</li>
+          </Link>
+          <Link href={"/party-wear"}>
+            <li>Party-wear</li>
+          </Link>
+          {/* <Link href={'/'}><li>T-shirts</li></Link> */}
+        </ul>
+      </div>
+      {/* //todo cart */}
+      <div className='flex flex-col justify-start px-7'>
+        <div className='absolute lg:relative right-3 items-center justify-start w-full border-0 py-1 px-0 focus:outline-non rounded hover:text-white mt-4 md:mt-0'>
+          {user.value && (
+            <MdAccountCircle
+              onMouseEnter={() => handleDropdown(true)}
+              onMouseLeave={() => handleDropdown(false)}
+              size={25}
+              className='cursor-pointer'
+            />
+          )}
+          {!user.value && <Link href={"/login"}>Login</Link>}
+          {dropdown && (
+            <div
+              className='ml-[-70px] rounded-md fixed top-12 z-[9999] flex shadow-lg'
+              onMouseEnter={() => handleDropdown(true)}
+              onMouseLeave={() => handleDropdown(false)}
+            >
+              <ul className='bg-white py-5 px-7  rounded-md'>
+                <li className='py-1 cursor-pointer'>
+                  <Link
+                    className='text-md text-black font-normal hover:text-blue'
+                    href={"/account"}
+                  >
+                    Account
+                  </Link>
+                </li>
+                <li className='py-1 cursor-pointer'>
+                  <Link
+                    className='text-md text-black font-normal hover:text-blue'
+                    href={"/order"}
+                  >
+                    Orders
+                  </Link>
+                </li>
+                <li className='py-1 cursor-pointer'>
+                  <a
+                    onClick={logout}
+                    className='text-md text-black font-normal hover:text-blue'
+                  >
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+      <button
+        onClick={toggleCart}
+        className='absolute lg:relative right-3 items-center border-0 py-1 px-3 focus:outline-non rounded hover:text-white mt-4 md:mt-0'
+      >
+        <AiOutlineShoppingCart size={25} />
+      </button> 
