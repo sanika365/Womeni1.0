@@ -3,7 +3,7 @@ const PaytmChecksum = require("paytmchecksum");
 import connectDb from "@/middleware/mongoose";
 import Order from "@/models/Order";
 import Product from "@/models/Product";
-import pincodes from '../../pincodes.json'
+// import pincodes from '../../pincodes.json'
 
 const handler = async (req, res) => {
   if (req.method == "POST") {
